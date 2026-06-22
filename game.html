@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minecraft 2D - Play</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="world-background">
+
+  <aside id="panel">
+
+    <nav id="toolbar">
+      <button class="tool-btn" data-tool="axe">
+        <img src="./images/axe.png" class="tool-icon" alt="Axe tool"> Axe
+      </button>
+      <button class="tool-btn" data-tool="pickaxe">
+        <img src="./images/pickaxe.webp" class="tool-icon" alt="Pickaxe tool"> Pickaxe
+      </button>
+      <button class="tool-btn active" data-tool="shovel">
+        <img src="./images/shovel.webp" class="tool-icon" alt="Shovel tool"> Shovel
+      </button>
+    </nav>
+
+    <hr class="panel-divider" />
+    <button id="reset-btn">🔄 Reset World</button>
+
+    <section id="inventory" aria-label="Inventory"></section>
+
+  </aside>
+
+  <main id="ground"></main>
+
+  <script src="index.js"></script>
+</body>
+</html>

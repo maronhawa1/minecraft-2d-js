@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Minecraft 2D - Maron Edition</title>
+</head>
+<body class="background">
+
+  <a href="game.html" class="play-btn">Play</a>
+  <button class="how-btn" id="how-btn">How to Play</button>
+
+  <div id="how-modal" class="how-modal hidden" role="dialog" aria-label="How to Play">
+    <div class="how-modal-box">
+      <h1>How to Play</h1>
+      <ol class="how-list">
+        <li class="how-step">
+          <span class="step-num">1</span>
+          <span>Select a tool from the toolbar</span>
+        </li>
+        <li class="how-step">
+          <span class="step-num">2</span>
+          <span>Click a tile — make sure your tool matches! Axe for trees, Pickaxe for rocks, Shovel for dirt</span>
+        </li>
+        <li class="how-step">
+          <span class="step-num">3</span>
+          <span>Collected tiles appear in your inventory</span>
+        </li>
+        <li class="how-step">
+          <span class="step-num">4</span>
+          <span>Click an inventory tile then place it anywhere</span>
+        </li>
+      </ol>
+      <button class="close-btn" id="close-btn">✕ Close</button>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

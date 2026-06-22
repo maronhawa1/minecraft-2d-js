@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background-color: #8b8b8b;
+}
+
+.background {
+  background-image: url("./images/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+.play-btn {
+  display: inline-block;
+  padding: 20px 110px;
+  background-color: rgba(106, 89, 91, 0.5);
+  backdrop-filter: blur(10px);
+  font-family: "Courier New", monospace;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
+}
+
+.play-btn:hover {
+  background-color: rgba(106, 89, 91, 0.8);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.world-background {
+  background-color: #727272;
+  background-image: url("./images/sky.png");
+  background-size: calc(100% - 210px) 100%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+#panel {
+  position: fixed;
+  top: 0;
+  left: 16px;
+  width: 180px;
+  background: #8b8b8b;
+  border: 4px solid #373737;
+  border-radius: 4px;
+  padding: 12px;
+  z-index: 10;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow:
+    inset 2px 2px 0 #c6c6c6,
+    inset -2px -2px 0 #555;
+}
+.panel-divider {
+  border: none;
+  border-top: 3px solid #555;
+  border-bottom: 2px solid #c6c6c6;
+  margin: 12px 0;
+}
+
+#toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tool-btn {
+  background: #8b8b8b;
+  color: #fff;
+  border: 3px solid #373737;
+  box-shadow:
+    inset 2px 2px 0 #c6c6c6,
+    inset -2px -2px 0 #555;
+  padding: 8px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  text-align: left;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.tool-btn.active {
+  background: #6b8e4e;
+  box-shadow:
+    inset 2px 2px 0 #9fd96b,
+    inset -2px -2px 0 #3e5a2a;
+}
+
+.tool-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+#inventory {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inv-slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #545454;
+  border: 2px solid #373737;
+  box-shadow:
+    inset 1px 1px 0 #2b2b2b,
+    inset -1px -1px 0 #6f6f6f;
+  border-radius: 2px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.inv-slot.selected {
+  box-shadow: inset 0 0 0 2px #ffe066;
+  background: #6b8e4e;
+}
+
+.inv-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+}
+
+.inv-label {
+  flex: 1;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000;
+  text-transform: capitalize;
+}
+
+.inv-count {
+  background: #373737;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ground {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 210px);
+  margin-left: 210px;
+}
+.block {
+  width: calc(100% / 25);
+  height: calc(100vw / 25);
+  cursor: pointer;
+}
+.how-btn {
+  display: inline-block;
+  padding: 20px 72px;
+  background-color: rgba(106, 89, 91, 0.5);
+  backdrop-filter: blur(10px);
+  font-family: "Courier New", monospace;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 62%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
+}
+
+.how-btn:hover {
+  background-color: rgba(106, 89, 91, 0.8);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.how-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.how-modal-box {
+  background: rgba(20, 20, 20, 0.95);
+  border: 3px solid #555;
+  border-radius: 10px;
+  padding: 36px 44px;
+  font-family: "Courier New", monospace;
+  color: #fff;
+  max-width: 440px;
+  width: 90%;
+}
+
+.how-modal-box h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #ffe066;
+  letter-spacing: 2px;
+}
+
+.how-modal-box h3 {
+  margin: 16px 0 10px;
+  color: #4a9c5d;
+  font-size: 0.95rem;
+}
+
+.how-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+.step-num {
+  background: #4a9c5d;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rule-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.close-btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  background: rgba(106, 89, 91, 0.7);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.close-btn:hover {
+  background: rgba(106, 89, 91, 1);
+}
+#reset-btn {
+  width: 100%;
+  background: #8b3a3a;
+  color: #fff;
+  border: 3px solid #373737;
+  box-shadow:
+    inset 2px 2px 0 #c47a7a,
+    inset -2px -2px 0 #5a1a1a;
+  padding: 8px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 0 #000;
+  margin-top: 4px;
+}
