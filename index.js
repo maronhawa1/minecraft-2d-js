@@ -1,6 +1,6 @@
 const TOOL_RULES = {
   axe: ["tree", "leaves"],
-  pickaxe: ["rock1", "rock2", "rock3"],
+  pickaxe: ["gold", "diamond", "coal"],
   shovel: ["dirt", "soil", "ground"],
 };
 
@@ -15,9 +15,9 @@ const TYPE_ICONS = {
 };
 
 const rockMap = {
-  "./images/rock1.jpg": "rock1",
-  "./images/rock2.jpg": "rock2",
-  "./images/rock3.jpg": "rock3",
+  "./images/rock1.jpg": "gold",
+  "./images/rock2.jpg": "diamond",
+  "./images/rock3.jpg": "coal",
 };
 
 let selectedTool = "shovel";
