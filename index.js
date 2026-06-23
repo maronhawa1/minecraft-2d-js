@@ -7,17 +7,17 @@ const TOOL_RULES = {
 const TYPE_ICONS = {
   ground: "./images/ground.png",
   soil: "./images/soil.jpg",
-  rock1: "./images/rock1.jpg",
-  rock2: "./images/rock2.jpg",
-  rock3: "./images/rock3.jpg",
+  gold: "./images/rock1.jpg",
+  diamond: "./images/rock2.jpg",
+  coal: "./images/rock3.jpg",
   tree: "./images/wood.jpg",
   leaves: "./images/leave.jpg",
 };
 
 const rockMap = {
-  "./images/rock1.jpg": "rock1",
-  "./images/rock2.jpg": "rock2",
-  "./images/rock3.jpg": "rock3",
+  "./images/rock1.jpg": "gold",
+  "./images/rock2.jpg": "diamond",
+  "./images/rock3.jpg": "coal",
 };
 
 let selectedTool = "shovel";
