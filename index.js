@@ -15,9 +15,9 @@ const TYPE_ICONS = {
 };
 
 const rockMap = {
-  "./images/rock1.jpg": "gold",
-  "./images/rock2.jpg": "diamond",
-  "./images/rock3.jpg": "coal",
+  "./images/rock1.jpg": "rock1",
+  "./images/rock2.jpg": "rock2",
+  "./images/rock3.jpg": "rock3",
 };
 
 let selectedTool = "shovel";
